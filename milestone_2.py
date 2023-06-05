@@ -8,7 +8,7 @@ word = random.choice(word_list)
 print(word)
 
 # function to choose validate the letter for valid input
-''' 
+
 def single_letter():
     guess = input('enter the letter: ')
     if len(guess) == 1 and guess.isalpha() :
@@ -20,4 +20,3 @@ def single_letter():
 
 #calling the function 
 single_letter()    
-'''
