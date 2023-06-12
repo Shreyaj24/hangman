@@ -3,7 +3,8 @@
 import milestone_2
 
 random_fruit = milestone_2.word
-#print(random_fruit)
+random_fruit = random_fruit.lower()
+print(random_fruit)
 '''
 import random
 
@@ -26,7 +27,7 @@ while True:
 '''
 def check_guess(guess):
     #while True:
-        if guess.lower() in random_fruit.lower() :
+        if guess in random_fruit :
             print(f'Good guess! {guess} is in the word.') 
         else:
             print(f'Sorry, {guess} is not in the word. Try again')
@@ -35,6 +36,8 @@ def check_guess(guess):
 def ask_for_input():
     while True:
         guess = input('enter the letter: ')
+        guess = guess.lower()
+        print(guess)
         if len(guess) == 1 and guess.isalpha():
             break
         else:
