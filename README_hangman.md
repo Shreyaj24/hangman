@@ -57,7 +57,12 @@
     - In this task we define few conditions to replace the correct guessed letters by the user in the word_guessed variable. 
 - **Task 4:**
     - In this task, we define the condition if the letter guessed by the user is not in the word and if not num_lives reduced by 1 with default messages.
-    
+
+## **Milestone 5** 
+- **Task 1:**
+    - In this task, we create a function that will run the game as expected. We create a _play_game_ function with the conditions and parameters inside which we call the _hangman_ class.
+      
+
 
 
     
