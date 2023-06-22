@@ -2,11 +2,22 @@ import random
 
 #Class definition
 class Hangman():
+    '''
+    This class represents the Hangman game.
+    Attributes:
+    word_list: list : input for the list of words
+    num_lives: int : number of chances user gets to guess the correct word.
+    word : str : Random word choice to guess
+    len_word : int : length of the random word.
+    word_guessed : list : list of empty letters for the random guessed word.
+    num_letters : int : length of the unique letters in the guessed word.
+    list_of_guesses : list : list of guessed words.  
+    '''
     
 
     #Class constructor
     def __init__(self, word_list : list, num_lives:int = 5):
-        
+
         #attributes
         self.word_list = word_list
         self.num_lives = num_lives
@@ -20,8 +31,10 @@ class Hangman():
 
     #methods
     def check_guess(self, guess):
-        self.guess = guess
-        
+        '''
+        This method validates if the letter guessed by the user is present in the guesssed word.
+        '''
+        self.guess = guess       
         if self.guess in self.word.lower()  :
             print(f"Good guess! {self.guess} is in the word.")
             for i in range(len(self.word)):
@@ -36,6 +49,10 @@ class Hangman():
         
 
     def ask_for_input(self):
+        '''
+        This method validates if the user input is alphabetical and single letter.
+        and checks if the user has won or lost the game.
+        '''
         while True:
             if (self.num_letters >= 1 and self.num_lives >= 1) :
                 self.guess = input('enter the letter: ')

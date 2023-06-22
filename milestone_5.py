@@ -2,8 +2,17 @@ import random
 
 #Class definition
 class Hangman():
-    
-
+    '''
+    This class represents the Hangman game.
+    Attributes:
+    word_list: list : input for the list of words
+    num_lives: int : number of chances user gets to guess the correct word.
+    word : str : Random word choice to guess
+    len_word : int : length of the random word.
+    word_guessed : list : list of empty letters for the random guessed word.
+    num_letters : int : length of the unique letters in the guessed word.
+    list_of_guesses : list : list of guessed words.  
+    '''
     #Class constructor
     def __init__(self, word_list : list, num_lives:int = 5):
         
@@ -17,9 +26,11 @@ class Hangman():
         self.num_letters: int = len(set(self.word.lower()))
         self.list_of_guesses : list = []
 
-
     #methods
     def check_guess(self, guess):
+        '''
+        This method validates if the letter guessed by the user is present in the guesssed word.
+        '''
         self.guess = guess
         
         if self.guess in self.word.lower()  :
@@ -34,27 +45,22 @@ class Hangman():
             print(f"Sorry, {self.guess} is not in the word.")
             print(f"You have {self.num_lives} lives left.")    
         
-
     def ask_for_input(self):
-        #while True:
-            #if (self.num_letters >= 1 and self.num_lives >= 1) :
-                self.guess = input('enter the letter: ')
-                self.guess = self.guess.lower()
-                if (len(self.guess) != 1) or (self.guess.isalpha() == False):
-                    print('Invalid letter. Please, enter a single alphabetical character.')
-                elif self.guess in self.list_of_guesses:
-                    print("You already tried that letter!")
-                else:
-                    self.list_of_guesses.append(self.guess)
-                    self.check_guess(self.guess)
-    '''
-            elif self.num_letters == 0:
-                print ('Yay! You have won')
-                break           
-            else:
-                print ('Sorry! You have lost')
-                break
         '''
+        This method validates if the user input is alphabetical and single letter.
+        and checks if the user has won or lost the game.
+        '''
+        
+        self.guess = input('enter the letter: ')
+        self.guess = self.guess.lower()
+        if (len(self.guess) != 1) or (self.guess.isalpha() == False):
+            print('Invalid letter. Please, enter a single alphabetical character.')
+        elif self.guess in self.list_of_guesses:
+            print("You already tried that letter!")
+        else:
+            self.list_of_guesses.append(self.guess)
+            self.check_guess(self.guess)
+
 
 #hangman1 = Hangman(['Apple','Blueberries','Cherry','Dragonfruit','Grapes'], 5 )
 #hangman1.ask_for_input()
